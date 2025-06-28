@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Configuration for character set and mobile responsiveness -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Information for better search engine ranking -->
+    <meta
+      name="description"
+      content="About This console application functions as an inventory management platform where users can view their products."
+    />
+    <meta name="keywords" content="gestion, datos, inventory, inventario" />
+    
+    <!-- GitHub Repository Link -->
+    <meta
+      name="sitedomain"
+      content="https://github.com/RafaeRamirez/gestion_datos2.git"
+    />
+    <!-- Meta tags for organization and author information -->
+    <meta name="organization" content="RafaeRamirez" />
+    <meta name="author" content="Rafael Ramirez Bolaño" />
+    <meta name="designer" content="Rafael Ramirez Bolaño" />
+    <meta name="copyright" content="© 2025 RafaeRamirez. All rights reserved" />
+
+    <!-- Rules for web crawlers -->
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="revisit-after" content="15days" />
+    
+    <!-- Mobile browser theme color -->
+    <meta name="theme-color" content="#ffffff" />
+    
+    <!-- External CSS file link -->
+    <link rel="stylesheet" href="/gestion-de-datos/src/css/styles.css" />
+
+    <!-- Document title shown in the browser tab -->
+    <title>Sistema Interactivo</title>
+  </head>
+
+  <body>
+    <!-- Header section displaying the website's main title -->
+    <header>
+      <h1>Bienvenido al gestor de datos</h1> <!-- "Welcome to the data manager" -->
+    </header>
+
+    <!-- Main content section -->
+    <main>
+      <!-- Form section for adding products to the inventory -->
+      <section class="formulario">
+        <!-- Article containing the form for adding products -->
+        <article>
+          <form class="myForm">
+            <p>En este apartado se registra el inventario</p> <!-- "This section is for registering the inventory" -->
+            
+            <!-- Product name input field -->
+            <label for="nombre">Ingresa el nombre del producto</label> <!-- "Enter the product name" -->
+            <input id="nombre" name="nombre" placeholder="Tomate" type="text" />
+
+            <!-- Product price input field -->
+            <label for="precio">Ingresa el precio del producto</label> <!-- "Enter the product price" -->
+            <input id="precio" name="precio" placeholder="15.100" type="text" />
+
+            <!-- Product quantity input field -->
+            <label for="cantidad">Ingresa la cantidad del producto</label> <!-- "Enter the product quantity" -->
+            <input id="cantidad" name="cantidad" placeholder="2255" type="text" />
+
+            <!-- Submit button to add product -->
+            <button type="button" onclick="enviarFormulario()">Enviar</button> <!-- "Submit" button triggers 'enviarFormulario()' function -->
+          </form>
+          <!-- Paragraph element to display the result of adding a product -->
+          <p id="resultado-agregar"></p>
+        </article>
+
+        <br />
+
+        <!-- Form section for searching a product by its ID -->
+        <article>
+          <form class="myForm">
+            <p>En este apartado se consulta el producto registrado con el id</p> <!-- "This section is to search for a registered product by its ID" -->
+            
+            <!-- Product ID input field -->
+            <label for="consulta-id">Ingresa el id del producto</label> <!-- "Enter the product ID" -->
+            <input id="consulta-id" name="consulta-id" placeholder="2255" type="text" />
+
+            <!-- Button to consult product -->
+            <button type="button" onclick="consultar_Productos()">Consultar</button> <!-- "Consult" button triggers 'consultar_Productos()' function -->
+          </form>
+          <!-- Paragraph element to display the result of the product search -->
+          <p id="resultado-consulta"></p>
+        </article>
+        
+        <br />
+
+        <!-- Form section for updating a product's price by its ID -->
+        <article>
+          <form class="myForm">
+            <p>En este apartado se actualiza el precio con el id del producto</p> <!-- "This section is to update the price using the product ID" -->
+            
+            <!-- Product ID input field -->
+            <label for="update-id">Ingresa el id del producto</label> <!-- "Enter the product ID" -->
+            <input id="update-id" name="update-id" placeholder="2255" type="text" />
+
+            <!-- New price input field -->
+            <label for="update-precio">Nuevo precio</label> <!-- "Enter the new price" -->
+            <input id="update-precio" name="update-precio" placeholder="15.100" type="text" />
+
+            <!-- Button to update the product price -->
+            <button type="button" onclick="actualizar_Precios()">Actualizar Precio</button> <!-- "Update Price" button triggers 'actualizar_Precios()' function -->
+          </form>
+          <!-- Paragraph element to display the result of the price update -->
+          <p id="resultado-actualizar"></p>
+        </article>
+        
+        <br />
+
+        <!-- Form section for deleting a product by its ID -->
+        <article>
+          <form class="myForm">
+            <p>En este apartado se elimina el producto con el id del producto</p> <!-- "This section is for deleting a product by its ID" -->
+            
+            <!-- Product ID input field -->
+            <label for="delete-id">Ingresa el id del producto</label> <!-- "Enter the product ID" -->
+            <input id="delete-id" name="delete-id" placeholder="2255" type="text" />
+
+            <!-- Button to delete the product -->
+            <button type="button" onclick="eliminar_productos()">Eliminar Producto</button> <!-- "Delete Product" button triggers 'eliminar_productos()' function -->
+          </form>
+          <!-- Paragraph element to display the result of the product deletion -->
+          <p id="resultado-eliminar"></p>
+        </article>
+      </section>
+
+      <br />
+
+      <!-- Table to display the inventory of products -->
+      <section>
+        <h3>Inventario de Productos</h3> <!-- "Product Inventory" -->
+        
+        <!-- Table displaying products dynamically -->
+        <table id="tabla-inventario">
+          <thead>
+            <tr>
+              <th>ID</th> <!-- Table header for product ID -->
+              <th>Nombre</th> <!-- Table header for product name -->
+              <th>Precio</th> <!-- Table header for product price -->
+              <th>Cantidad</th> <!-- Table header for product quantity -->
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Product rows will be dynamically added here by JavaScript -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- External JavaScript file that contains the logic for adding, updating, deleting, and consulting products -->
+    <script src="src/js/gestion_datos.js"></script>
+  </body>
+</html>
