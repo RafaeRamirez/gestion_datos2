@@ -41,13 +41,11 @@ javascript
     `
 2.  Follow the on-screen prompts to manage your inventory.
 
-    (Provide more detailed usage instructions or examples if necessary)
+  
 
 Please make sure to update tests as appropriate.
 
-## Contact
 
-(Optional: Add your contact information or project links)
 
 - my email - rafar1129@gmail.com
 - Project Link: [https://github.com/RafaeRamirez/gestion_datos2.git](https://github.com/RafaeRamirez/gestion_datos2.git)
